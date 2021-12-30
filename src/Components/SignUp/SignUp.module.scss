@@ -1,0 +1,157 @@
+$main-bright-color: #5e81fe;
+$sub-bright-color: #697ca6;
+$sub-bg-color: #232b35;
+$shadow-color: #17202a;
+
+.SignUpDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.SignUp {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 60%;
+  min-height: 620px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  // background: $sub-bg-color;
+  // box-shadow: 0px 5px 45px rgba(151, 175, 227, 0.1);
+  border-radius: 12px;
+
+  .Loader {
+    margin-top: 100px;
+  }
+
+  .Intro {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    .IntroLogo {
+      width: 50px;
+      height: 50px;
+    }
+    .IntroText {
+      margin-left: 10px;
+      margin-right: 10px;
+      text-align: center;
+      font-weight: 400;
+      font-size: 40px;
+      color: $main-bright-color;
+    }
+  }
+
+  form {
+    min-width: 400px;
+    width: 40%;
+    color: $main-bright-color;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    background: $sub-bg-color;
+    //   border: 1px solid #d2e1ff;
+    box-shadow: 0px 5px 10px $shadow-color;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 20px 30px;
+    margin-bottom: 0px;
+  }
+  .EnterData {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 4px;
+  }
+  input {
+    background: $sub-bg-color;
+    border: 1px solid #d2e1ff;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin: 10px 0px;
+    padding: 7px 9px;
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 16px;
+    color: $main-bright-color;
+  }
+  input::placeholder {
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: $sub-bright-color;
+  }
+  input:focus {
+    outline: none;
+  }
+  
+  .button {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 30px;
+    border: none;
+    background: #394048;
+    border-radius: 6px;
+    color: $main-bright-color;
+    text-shadow: 0px 0px 2px #17202a;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: 0.1s;
+
+    &:hover,
+    &:active {
+      background: #2e353f;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    &:disabled {
+      background: #2e353f;
+    }
+  }
+
+  .HaveAcc {
+    font-size: 12px;
+    margin-top: 40px;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    color: $sub-bright-color;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media all and (max-width: 1100px) {
+  .SignUp {
+    form {
+      margin-bottom: 0px;
+    }
+  }
+}
+@media all and (max-width: 790px) {
+  .SignUp {
+    min-height: 600px;
+    width: 100%;
+    margin: 0px;
+    max-width: 100%;
+    border-radius: 0px;
+
+    .IntroText {
+      font-size: 34px;
+    }
+  }
+}
+@media all and (max-width: 424px) {
+  .SignUp {
+    form {
+      padding: 20px 20px;
+      min-width: 300px;
+    }
+  }
+}

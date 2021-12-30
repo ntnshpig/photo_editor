@@ -1,0 +1,190 @@
+$main-text-color: #3d4f9f;
+$sub-text-color: #697ca6;
+$background_color: #a4bff7;
+
+.Footer {
+  width: 100vw;
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.Top {
+  margin-top: 40px;
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  .TopLeftBox {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+    .Logo {
+      width: 40px;
+      height: 40px;
+    }
+    .Nav {
+      min-width: 350px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      flex-flow: row;
+      justify-content: space-evenly;
+    }
+    .Nav li {
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.2s ease;
+      margin-left: 3vw;
+    }
+    .Nav li:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 15px;
+      letter-spacing: 0.05em;
+      text-transform: capitalize;
+
+      color: #697ca6;
+
+      text-shadow: 0px 0px 5px #17202a;
+    }
+    a:visited {
+      color: #697ca6;
+    }
+  }
+
+  .TopRightBox {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .SocialMedia {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .SocialMediaIcon {
+      color: $sub-text-color;
+      font-size: 25px;
+      margin: 0px 10px;
+      transition: all 0.2s ease;
+    }
+    .SocialMediaIcon:hover,
+    .SocialMediaIcon:active {
+      cursor: pointer;
+      color: $main-text-color;
+      transform: scale(1.2);
+    }
+
+    .Button {
+      width: 100px;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: bold;
+      transition: 0.1s;
+      border-radius: 6px;
+      background-clip: padding-box;
+      position: relative;
+      box-sizing: border-box;
+      color: #3d4f9f;
+      text-shadow: 0px 0px 2px #17202a;
+
+      &:focus {
+        outline: none;
+      }
+    }
+    .SignUp {
+      padding: 0.5rem;
+      color: #3d4f9f;
+      border: 1px solid #00000046;
+      background: rgba(255, 255, 255, 0.05);
+
+      &:hover,
+      &:active {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+.Bot {
+  width: 90%;
+  text-align: left;
+  opacity: 0.6;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  padding: 0.5em 0em 1.5em 0em;
+  color: #aeb8d0;
+  margin-top: 10px;
+
+  .LoveText {
+    margin-left: calc(40px + 3vw);
+  }
+}
+@media all and (max-width: 930px) {
+  .Top {
+    flex-flow: column;
+
+    .TopLeftBox {
+      width: 100%;
+      flex-flow: row;
+      justify-content: space-around;
+
+      .Nav {
+        min-width: 0px;
+        flex-flow: column;
+      }
+      .Nav li {
+        margin-bottom: 10px;
+      }
+    }
+
+    .TopRightBox {
+      width: 100%;
+      flex-flow: row;
+      justify-content: space-around;
+    }
+  }
+  .Bot {
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    .LoveText {
+      margin-top: 20px;
+      margin-left: 0px;
+      margin-bottom: 10px;
+    }
+  }
+}
+@media all and (max-width: 770px) {
+  .Bot {
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    .LoveText {
+      margin-bottom: 10px;
+    }
+  }
+}

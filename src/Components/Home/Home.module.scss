@@ -1,0 +1,74 @@
+$main-bright-color: #5e81fe;
+$sub-bright-color: #697ca6;
+@keyframes top-cricle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes top-cricle-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.Home {
+  position: relative;
+}
+.Info {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 500px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+
+  .IntroText {
+    color: $main-bright-color;
+    font-size: 2.5em;
+    text-shadow: 0px 0px 5px #17202a;
+  }
+  .DescribeText {
+    color: #697ca6;
+    font-size: 1.3em;
+    text-shadow: 0px 0px 5px #17202a;
+  }
+
+  .PlayContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    padding: 1em;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+    box-shadow: 0px 0px 2px #17202a;;
+    border: 2px solid transparent;
+
+    &:hover {
+      border-top: 2px solid $main-bright-color;
+      animation: top-cricle 1s ease-in-out infinite;
+      // box-shadow: 10px 10px 20px rgba(201, 209, 231, 0.6);
+
+      .Icon {
+        animation: top-cricle-reverse 1s ease-in-out infinite;
+      }
+    }
+
+    .Icon {
+      color: $main-bright-color;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

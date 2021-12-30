@@ -1,0 +1,209 @@
+$main-bright-color: #5e81fe;
+$sub-bright-color: #697ca6;
+$sub-bg-color:#232b35;
+$shadow-color: #17202a;
+
+.PhotoEdit {
+  height: 480px;
+  width: 900px;
+  display: flex;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+}
+/*Tools part*/
+.Tools {
+  height: 100%;
+  width: 10%;
+  box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+
+  ul {
+    list-style: none;
+
+    li {
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+      transition: 0.4s;
+
+      i {
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 15px;
+        font-size: 2em;
+      }
+
+      p {
+        visibility: hidden;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 8px;
+      }
+
+      &:hover i {
+        color: $main-bright-color;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      &:hover p {
+        visibility: visible;
+      }
+    }
+    .active_option {
+      background: rgba(255, 255, 255, 0.1);
+
+      p {
+        visibility: visible;
+        margin-top: 8px;
+      }
+
+      i {
+        color: $main-bright-color;
+      }
+    }
+  }
+}
+
+/*content part */
+.content {
+  position: relative;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.choose_image {
+  width: 70%;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.upload_img_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+p.hint {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2em;
+}
+.upload_img_box i {
+  font-size: 2.2em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.selectedImage {
+  display: none;
+}
+
+/*canvas */
+.image_canvas {
+  display: none;
+}
+
+/*image holder part*/
+.image_holder {
+  position: relative;
+  display: none;
+  width: 100%;
+  height: 80%;
+}
+.image_holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.image_holder button {
+  position: absolute;
+  display: none;
+  top: -30px;
+  left: 0px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: $main-bright-color;
+  font-size: 1.8em;
+  background: none;
+  transform: rotate(270deg);
+}
+
+/*options part */
+.options {
+  position: absolute;
+  transform: translateY(80px);
+  bottom: 0;
+  height: 50px;
+  width: 50%;
+  padding: 0 25px;
+  border-radius: 10px 10px 0 0;
+  transition: 0.5s;
+  box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+
+  .option {
+    display: none;
+
+    p {
+      font-size: 16px;
+      margin: 0px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .slider {
+      width: 80%;
+      height: 5px;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+  .active_controller {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+  }
+}
+
+/*clear or reset btn */
+
+.clearAll {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  padding: 10px;
+  color: #17202a;
+  background: $main-bright-color;
+  transform: translateX(150px);
+  box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+}
+.clearAll span {
+  margin-right: 10px;
+}

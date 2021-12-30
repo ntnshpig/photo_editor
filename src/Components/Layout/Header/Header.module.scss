@@ -1,0 +1,128 @@
+$main-bright-color: #5e81fe;
+
+.Header {
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+.LeftBox {
+  margin-left: 5vw;
+  min-width: 35vw;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: left;
+
+  .Logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .logoImage {
+    width: 40px;
+    height: 40px;
+  }
+  .LogoText {
+    color: #5e81fe;
+    font-size: 1.5em;
+    margin-left: 13px;
+  }
+  .Logo:active,
+  .Logo:visited {
+    color: black;
+  }
+}
+.RightBox {
+  margin-right: 5vw;
+}
+.Button {
+  width: 100px;
+  margin: 10px 10px 10px 0px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  transition: 0.1s;
+  border-radius: 6px;
+  background-clip: padding-box;
+  position: relative;
+  box-sizing: border-box;
+  color: $main-bright-color;
+  text-shadow: 0px 0px 2px #17202a;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.SignIn {
+  padding: 0.5rem;
+  border: 1px solid #00000046;
+  background: rgba(255, 255, 255, 0.1);
+  &:hover,
+  &:active {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+.SignUp {
+  padding: 0.5rem;
+  border: 1px solid #00000046;
+  background: rgba(255, 255, 255, 0.05);
+
+  &:hover,
+  &:active {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+.Logout {
+  padding: 0.5rem;
+  border: 2px solid #d2e1ff;
+  background: #d2e1ff;
+
+  &:hover,
+  &:active {
+    background: #b4cdff;
+  }
+}
+.Profile {
+  padding: 0.5rem 1rem;
+  border: 2px solid #d2e1ff;
+
+  &:hover,
+  &:active {
+    background: #d2e1ff;
+  }
+}
+
+@media all and (max-width: 1300px) {
+  .LogoText {
+    display: none;
+  }
+}
+@media all and (max-width: 1200px) {
+  .LeftBox {
+    margin-left: 2vw;
+  }
+  .RightBox {
+    margin-right: 2vw;
+  }
+}
+@media all and (max-width: 1100px) {
+  .RightBox {
+    display: none;
+  }
+  .LogoText {
+    display: block;
+  }
+  .LeftBox {
+    margin-left: 5vw;
+  }
+}
+@media all and (max-width: 380px) {
+  .LeftBox {
+    justify-content: center;
+  }
+}
