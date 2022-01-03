@@ -1,11 +1,11 @@
 $main-bright-color: #5e81fe;
 $sub-bright-color: #697ca6;
-$sub-bg-color:#232b35;
+$sub-bg-color: #232b35;
 $shadow-color: #17202a;
 
 .PhotoEdit {
-  height: 480px;
-  width: 900px;
+  height: 560px;
+  width: 1100px;
   display: flex;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.05);
@@ -15,7 +15,7 @@ $shadow-color: #17202a;
 /*Tools part*/
 .Tools {
   height: 100%;
-  width: 10%;
+  width: 90px;
   box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
   background: rgba(255, 255, 255, 0.05);
 
@@ -32,6 +32,12 @@ $shadow-color: #17202a;
       cursor: pointer;
       transition: 0.4s;
 
+      .OptionLogo {
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 10px;
+        font-size: 2em;
+        padding: 0px;
+      }
       i {
         color: rgba(255, 255, 255, 0.5);
         margin-top: 15px;
@@ -46,6 +52,9 @@ $shadow-color: #17202a;
       }
 
       &:hover i {
+        color: $main-bright-color;
+      }
+      &:hover .OptionLogo {
         color: $main-bright-color;
       }
 
@@ -64,10 +73,12 @@ $shadow-color: #17202a;
         visibility: visible;
         margin-top: 8px;
       }
-
-      i {
+      .OptionLogo {
         color: $main-bright-color;
       }
+      // i {
+      //   color: $main-bright-color;
+      // }
     }
   }
 }
@@ -124,12 +135,14 @@ p.hint {
   display: none;
   width: 100%;
   height: 80%;
+  border-radius: 12px;
 }
 .image_holder img {
+  border-radius: 12px;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 15px;
+  overflow: hidden;
 }
 .image_holder button {
   position: absolute;
@@ -201,9 +214,79 @@ p.hint {
   padding: 10px;
   color: #17202a;
   background: $main-bright-color;
-  transform: translateX(150px);
+  transform: translateY(100px);
   box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
 }
 .clearAll span {
   margin-right: 10px;
+}
+.mixBlendMode {
+  flex-flow: row wrap;
+  background-color: #2e353f;
+  border-radius: 0px 0px 12px 12px;
+  width: 930px;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  display: none;
+
+  .mixBlendModeButton {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    border: none;
+    background: #394048;
+    border-radius: 6px;
+    color: $main-bright-color;
+    text-shadow: 0px 0px 2px #17202a;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: 0.1s;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+
+    &:hover,
+    &:active {
+      background: #1c2127;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    &:disabled {
+      background: #2e353f;
+    }
+  }
+}
+
+.DuotoneFilters {
+  flex-flow: row;
+  background-color: #2e353f;
+  border-radius: 0px 0px 12px 12px;
+  max-width: 930px;
+  transition: all 0.2s ease-in-out;
+  display: none;
+  overflow-x: scroll;
+
+  .DuotoneElem {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    .DuotoneImg {
+      border-radius: 5px;
+      width: 60px;
+      height: 90px;
+      overflow: hidden;
+      object-fit: cover;
+    }
+  }
 }

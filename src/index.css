@@ -35,7 +35,7 @@ code {
   border-radius: 10px;
 }
 *::-scrollbar-thumb {
-  background-color: #17202A;
+  background-color: #5e81fe;
   border-radius: 10px;
 }
 *::-webkit-scrollbar {
@@ -47,6 +47,6 @@ code {
   border-radius: 10px;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #17202A;
+  background-color: #5e81fe;
   border-radius: 10px;
 }
