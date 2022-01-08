@@ -51,7 +51,7 @@ const SignUp = (props) => {
       password_confirmation: password_confirmationRef.current.value,
     };
     try {
-      // await api().get("/sanctum/csrf-cookie");
+      await api().get("/sanctum/csrf-cookie");
       const response = await api().post("api/auth/register", {
         ...user,
       });
@@ -107,6 +107,14 @@ const SignUp = (props) => {
               ref={password_confirmationRef}
               required
             />
+            <div className={scss.CheckboxDiv}>
+              <Checkbox onChange={onChecked} className={scss.TermsCheckbox}>
+                Accept
+              </Checkbox>{" "}
+              <span className={scss.TermsOfUse} onClick={userPolicy}>
+                User policy
+              </span>
+            </div>
             <button type="submit" className={scss.button}>
               Sign Up
             </button>

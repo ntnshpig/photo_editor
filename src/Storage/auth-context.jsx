@@ -36,7 +36,7 @@ export const AuthContextProvider = (props) => {
   const loginHandler = (userData) => {
     Cookies.set("ticket_management_is_user_logged_in", true, {
       expires: 60 * 24*7,
-      sameSite: "Lax",
+      sameSite: "lax",
     });
 
     setEmail(userData.user.email);
@@ -50,7 +50,7 @@ export const AuthContextProvider = (props) => {
 
   const updateUserInfo = async () => {
     try {
-      const response = await api().get("api/front/user_info");
+      const response = await api().get("api/user/user_info");
       console.log(response);
 
       if (+response.status === 200) {
@@ -71,7 +71,10 @@ export const AuthContextProvider = (props) => {
   };
 
   const logoutHandler = async () => {
-    Cookies.remove('ticket_management_is_user_logged_in', {expires: 86400, sameSite: 'lax'})
+    Cookies.remove('ticket_management_is_user_logged_in', {
+      expires: 86400, 
+      sameSite: "lax"
+    });
     setEmail("");
     setUserId(null);
     setFullName("");
@@ -79,16 +82,16 @@ export const AuthContextProvider = (props) => {
     localStorage.removeItem("userId");
     localStorage.removeItem("email");
     localStorage.removeItem("fullName");
-    // try {
-    //   const response = await api().post("api/auth/logout");
+    try {
+      const response = await api().post("api/auth/logout");
      
-    //   if (response.status !== 200) {
-    //     throw new Error(response.data.message);
+      if (response.status !== 200) {
+        throw new Error(response.data.message);
 
-    //   }
-    // } catch (error) {
-    //   message.error("Произошла ошибка!");
-    // }
+      }
+    } catch (error) {
+      message.error("Произошла ошибка!");
+    }
   };
 
   let contextValue = {

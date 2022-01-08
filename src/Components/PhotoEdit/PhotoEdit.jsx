@@ -50,6 +50,8 @@ const PhotoEdit = (props) => {
   const clearAllRef = useRef("");
   const mixBlendModeRef = useRef("");
   const DuotoneFiltersRef = useRef("");
+
+  
   const selectImageHandler = () => {
     selectedImageRef.current.click();
   };

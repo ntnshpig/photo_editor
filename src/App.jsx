@@ -10,6 +10,7 @@ const HomePage = React.lazy(() => import("./Components/Pages/HomePage"));
 const PhotoEditPage = React.lazy(() => import("./Components/Pages/PhotoEditPage"));
 const SignInPage = React.lazy(() => import("./Components/Pages/SignInPage"));
 const SignUpPage = React.lazy(() => import("./Components/Pages/SignUpPage"));
+const ProfilePage = React.lazy(() => import("./Components/Pages/ProfilePage"));
 
 const App = () => {
   const ctxAuth = useContext(AuthContext);
@@ -29,6 +30,9 @@ const App = () => {
       >
         <Routes>
           <Route path="/" exact element={<HomePage />} />
+          {ctxAuth.isLoggedIn() && (
+            <Route path="/profile" exact element={<ProfilePage />} />
+          )}
           <Route path="/edit" exact element={<PhotoEditPage />} />
           <Route path="/signIn" exact element={<SignInPage />} />
           <Route path="/signUp" exact element={<SignUpPage />} />

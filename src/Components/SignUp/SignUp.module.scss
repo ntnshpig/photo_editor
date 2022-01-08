@@ -65,6 +65,19 @@ $shadow-color: #17202a;
     margin-bottom: 20px;
     margin-left: 4px;
   }
+  .TermsCheckbox {
+    font-size: 14px;
+    margin-left: 10px;
+    color: $main-bright-color;
+    margin-left: 9px;
+  }
+  .TermsOfUse {
+    color: $main-bright-color;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
   input {
     background: $sub-bg-color;
     border: 1px solid #d2e1ff;

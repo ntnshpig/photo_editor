@@ -78,27 +78,28 @@ const SignIn = (props) => {
     event.preventDefault();
     setIsLoading(true);
 
-    // if (formIsValid) {
-    //   try {
-    //     const response = await api().post("api/auth/login", {
-    //       email: emailState.value,
-    //       password: passwordState.value,
-    //     });
-    //     if (response.status === 200) {
-    //       message.success("Вход произведён успешно!");
-    //       authCtx.login(response.data);
-    //       navigate("/profile");
-    //     } else if (response.status === 403) {
-    //       message.error("Пользователь не найден!");
-    //     } else if (response.status === 400) {
-    //       message.error("Вы ещё не подтвердили почту!");
-    //     } else {
-    //       throw new Error(response.data.message);
-    //     }
-    //   } catch (error) {
-    //     message.error("Данные не верные!");
-    //   }
-    // }
+    if (formIsValid) {
+      try {
+        await api().get("/sanctum/csrf-cookie");
+        const response = await api().post("api/auth/login", {
+          email: emailState.value,
+          password: passwordState.value,
+        });
+        if (response.status === 200) {
+          message.success("Вход произведён успешно!");
+          authCtx.login(response.data);
+          navigate("/profile");
+        } else if (response.status === 403) {
+          message.error("Пользователь не найден!");
+        } else if (response.status === 400) {
+          message.error("Вы ещё не подтвердили почту!");
+        } else {
+          throw new Error(response.data.message);
+        }
+      } catch (error) {
+        message.error("Данные не верные!");
+      }
+    }
     setIsLoading(false);
   };
 
