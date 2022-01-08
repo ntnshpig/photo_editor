@@ -9,38 +9,36 @@ import AuthContext from "../../Storage/auth-context";
 import scss from "./SignUp.module.scss";
 import { useNavigate } from "react-router";
 import Loader from "react-loader-spinner";
-import { Checkbox, message } from "antd";
+import { Checkbox, message, notification } from "antd";
 import api from "../../Services/api";
-import userPolicy from "./UserPolicy";
 import Logo from "../../Storage/img/Logo.svg"
 
 const SignUp = (props) => {
   const navigate = useNavigate();
   const authCtx = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
   const full_nameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const password_confirmationRef = useRef("");
 
-  function onChecked(e) {
-    setIsChecked(e.target.checked);
-  }
-
+  const openEmailNotification = (placement) => {
+    notification.info({
+      message: ` Confirm you email!`,
+      description:
+        'If you have not received an email after 15 minutes, please double-check "Spam" and "UnSorted".',
+      placement,
+    });
+  };
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    if (!isChecked) {
-      message.info("Примите пользовательское соглашение!");
-      return;
-    }
     if (passwordRef.current.value.length < 6) {
-      message.error("Пароль должен быть больше 6 символов!");
+      message.error("Password have to be more than 6 symbols!");
       return;
     }
     if (passwordRef.current.value !== password_confirmationRef.current.value) {
-      message.error("Пароли не совпадают!");
+      message.error("Passwords are not the same!");
       return;
     }
     setIsLoading(true);
@@ -60,6 +58,7 @@ const SignUp = (props) => {
         throw new Error(response.data.message);
       } else {
         message.success("Sign Up succed! Now login");
+        openEmailNotification("topRight");
         navigate("/signIn");
       }
     } catch (error) {
@@ -107,14 +106,6 @@ const SignUp = (props) => {
               ref={password_confirmationRef}
               required
             />
-            <div className={scss.CheckboxDiv}>
-              <Checkbox onChange={onChecked} className={scss.TermsCheckbox}>
-                Accept
-              </Checkbox>{" "}
-              <span className={scss.TermsOfUse} onClick={userPolicy}>
-                User policy
-              </span>
-            </div>
             <button type="submit" className={scss.button}>
               Sign Up
             </button>

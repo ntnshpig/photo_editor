@@ -86,18 +86,18 @@ const SignIn = (props) => {
           password: passwordState.value,
         });
         if (response.status === 200) {
-          message.success("Вход произведён успешно!");
+          message.success("Successful login!");
           authCtx.login(response.data);
           navigate("/profile");
         } else if (response.status === 403) {
-          message.error("Пользователь не найден!");
+          message.error("User is not found!");
         } else if (response.status === 400) {
-          message.error("Вы ещё не подтвердили почту!");
+          message.error("Email is not confirmed!");
         } else {
           throw new Error(response.data.message);
         }
       } catch (error) {
-        message.error("Данные не верные!");
+        message.error("Data is incorrect!");
       }
     }
     setIsLoading(false);

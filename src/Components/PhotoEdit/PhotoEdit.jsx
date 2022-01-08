@@ -12,6 +12,7 @@ import "./duetonfilters.css";
 import * as htmlToImage from "html-to-image";
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
 import { download } from "downloadjs";
+import { message } from "antd";
 
 const PhotoEdit = (props) => {
   const navigate = useNavigate();
@@ -148,6 +149,10 @@ const PhotoEdit = (props) => {
   };
 
   const exportHandler = () => {
+    if(!authCtx.isLoggedIn()) {
+      message.error("You need to Login fisrt!");
+      return
+    }
     if (imageRef.current.getAttribute("src") !== "") {
       htmlToImage
         .toJpeg(image_holderRef.current, { quality: 0.95 })
@@ -183,7 +188,7 @@ const PhotoEdit = (props) => {
 
   const showOption = (option) => {
     if (imageRef.current.getAttribute("src") === "") {
-      alert("Choose Image First");
+      message.info("Choose Image First");
     } else {
       optionsRef.current.style.transform = "translateY(0px)";
 
@@ -219,7 +224,7 @@ const PhotoEdit = (props) => {
         canvasRef.current.height = imageRef.current.naturalHeight;
         canvasRef.current.width = imageRef.current.naturalWidth;
       } else {
-        alert("Edit Your Image First");
+        message.info("Edit Your Image First");
       }
     }
   };

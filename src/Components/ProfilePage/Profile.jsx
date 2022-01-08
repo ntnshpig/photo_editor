@@ -13,7 +13,7 @@ const Profile = (props) => {
   const [isEditProfile, setIsEditProfile] = useState(false);
   const [newName, setNewName] = useState(authCtx.fullName);
   const [newEmail, setNewEmail] = useState(authCtx.email);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const oldPass = useRef("");
   const newPass = useRef("");
   const newPassRepeat = useRef("");
@@ -79,8 +79,8 @@ const Profile = (props) => {
   };
 
   useEffect(async () => {
-    await authCtx.update_info();
-    await setIsLoading(false);
+    // await authCtx.update_info();
+    // await setIsLoading(false);
   }, []);
 
   return (

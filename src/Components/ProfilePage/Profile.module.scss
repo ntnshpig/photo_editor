@@ -13,14 +13,12 @@ $shadow-color: #17202a;
   display: flex;
   flex-flow: column;
   align-items: center;
-  background: $sub-bright-color;
-  box-shadow: 0px 5px 45px rgba(151, 175, 227, 0.1);
+  background: $sub-bg-color;
   border-radius: 12px;
 
   .TopDiv {
     width: 100%;
-    background: $sub-bright-color;
-    box-shadow: 0px 5px 45px rgba(151, 175, 227, 0.1);
+    background: $sub-bg-color;
     border-radius: 12px 12px 0px 0px;
     display: flex;
     flex-flow: row;
@@ -33,9 +31,9 @@ $shadow-color: #17202a;
       line-height: 24px;
       letter-spacing: 0.05em;
 
-      color: #697ca6;
+      color: $main-bright-color;
 
-      text-shadow: 0px 0px 5px #e6e6e6;
+      text-shadow: 0px 0px 2px $sub-bright-color;
     }
 
     .Email {
@@ -44,9 +42,9 @@ $shadow-color: #17202a;
       line-height: 24px;
       letter-spacing: 0.05em;
 
-      color: #5e81fe;
+      color: $main-bright-color;
 
-      text-shadow: 0px 0px 5px #e6e6e6;
+      text-shadow: 0px 0px 2px $sub-bright-color;
     }
   }
 
@@ -106,16 +104,16 @@ $shadow-color: #17202a;
           span {
             margin-top: 15px;
             margin-bottom: 5px;
-            font-size: 20px;
+            font-size: 16px;
             line-height: 24px;
             letter-spacing: 0.05em;
 
-            color: #697ca6;
+            color: $sub-bright-color;
 
-            text-shadow: 0px 0px 5px #e6e6e6;
+            text-shadow: 0px 0px 1px $sub-bright-color;
           }
           input {
-            background: $sub-bright-color;
+            background: $sub-bg-color;
             border: 1px solid #d2e1ff;
             box-sizing: border-box;
             border-radius: 6px;
@@ -123,13 +121,13 @@ $shadow-color: #17202a;
             overflow: hidden;
             font-weight: 400;
             font-size: 16px;
-            color: #3d4f9f;
+            color: $main-bright-color;
 
             &::placeholder {
               font-size: 15px;
               line-height: 24px;
               letter-spacing: -0.015em;
-              color: #697ca6;
+              color: $sub-bright-color;
               opacity: 0.39;
             }
 
@@ -144,7 +142,7 @@ $shadow-color: #17202a;
           flex-flow: column;
           input {
             max-width: 250px;
-            background: $sub-bright-color;
+            background: $sub-bg-color;
             border: 1px solid #d2e1ff;
             box-sizing: border-box;
             border-radius: 6px;
@@ -152,13 +150,13 @@ $shadow-color: #17202a;
             overflow: hidden;
             font-weight: 400;
             font-size: 16px;
-            color: #3d4f9f;
+            color: $main-bright-color;
 
             &::placeholder {
               font-size: 15px;
               line-height: 24px;
               letter-spacing: -0.015em;
-              color: #697ca6;
+              color: $sub-bright-color;
               opacity: 0.39;
             }
 
@@ -176,9 +174,9 @@ $shadow-color: #17202a;
           line-height: 24px;
           letter-spacing: 0.05em;
 
-          color: #697ca6;
+          color: $sub-bright-color;
 
-          text-shadow: 0px 0px 5px #e6e6e6;
+          text-shadow: 0px 0px 1px $sub-bright-color;
         }
       }
 
@@ -209,28 +207,6 @@ $shadow-color: #17202a;
             height: 25px;
           }
         }
-        .button {
-          font-size: 17px;
-          background-clip: padding-box;
-          box-sizing: border-box;
-          color: #3d4f9f;
-          font-weight: 500;
-          border: 0;
-          background: #d2e1ff;
-          border-radius: 6px;
-          padding: 12px 1.5rem;
-          cursor: pointer;
-          transition: 0.1s;
-        }
-
-        .button:hover,
-        .button:active {
-          background: #a4bff7;
-        }
-
-        .button:focus {
-          outline: none;
-        }
       }
     }
     .ButtonsDiv {
@@ -250,7 +226,7 @@ $shadow-color: #17202a;
         font-size: 12px;
         line-height: 15px;
         letter-spacing: 0.05em;
-        color: #aeb8d0;
+        color: $sub-bright-color;
         display: flex;
         align-items: center;
 
@@ -266,36 +242,36 @@ $shadow-color: #17202a;
         }
 
         .Active {
-          color: #5e81fe;
+          color: $main-bright-color;
         }
       }
       .RightBlockOfButtons {
         .button {
-          font-size: 17px;
-          background-clip: padding-box;
-          box-sizing: border-box;
-          color: #3d4f9f;
-          font-weight: 500;
-          border: 0;
-          background: #d2e1ff;
-          border-radius: 6px;
-          padding: 12px 1.5rem;
+          margin: 10px 10px 10px 0px;
           cursor: pointer;
+          font-size: 17px;
+          font-weight: bold;
           transition: 0.1s;
+          border-radius: 6px;
+          background-clip: padding-box;
+          position: relative;
+          box-sizing: border-box;
+          color: $main-bright-color;
+          text-shadow: 0px 0px 2px #17202a;
+          padding: 0.5em 0.75em;
+          border: none;
+          background: rgba(255, 255, 255, 0.05);
+        
+          &:hover,
+          &:active {
+            background: rgba(255, 255, 255, 0.1);
+          }
+
+          &:focus {
+            outline: none;
+          }
         }
 
-        .button:hover,
-        .button:active {
-          background: #a4bff7;
-        }
-
-        .button:focus {
-          outline: none;
-        }
-
-        .button:disabled {
-          background: #ebf2ff;
-        }
       }
     }
   }

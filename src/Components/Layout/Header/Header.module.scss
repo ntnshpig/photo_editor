@@ -43,7 +43,6 @@ $shadow-color: #17202a;
   margin-right: 5vw;
 }
 .Button {
-  width: 100px;
   margin: 10px 10px 10px 0px;
   cursor: pointer;
   font-size: 17px;
@@ -62,7 +61,7 @@ $shadow-color: #17202a;
 }
 
 .SignIn {
-  padding: 0.5rem;
+  padding: 0.5em 0.75em;
   border: 1px solid #00000046;
   background: rgba(255, 255, 255, 0.1);
   &:hover,
@@ -71,7 +70,7 @@ $shadow-color: #17202a;
   }
 }
 .SignUp {
-  padding: 0.5rem;
+  padding: 0.5em 0.75em;
   border: 1px solid #00000046;
   background: rgba(255, 255, 255, 0.05);
 
@@ -81,23 +80,22 @@ $shadow-color: #17202a;
   }
 }
 .Logout {
-  padding: 0.5rem;
-  border: 2px solid $sub-bg-color;
-  background: $sub-bg-color;
+  padding: 0.5em 0.75em;
+  border: 1px solid #00000046;
+  background: rgba(255, 255, 255, 0.05);
 
   &:hover,
   &:active {
-    background: $sub-bg-color;
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 .Profile {
-  padding: 0.5rem 1rem;
-  border: 2px solid $sub-bright-color;
-  background: $sub-bright-color;
-
+  padding: 0.5em;
+  border: 1px solid #00000046;
+  background: rgba(255, 255, 255, 0.1);
   &:hover,
   &:active {
-    background: $sub-bg-color;
+    background: rgba(255, 255, 255, 0.05);
   }
 }
 

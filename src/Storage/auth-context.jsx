@@ -35,7 +35,7 @@ export const AuthContextProvider = (props) => {
 
   const loginHandler = (userData) => {
     Cookies.set("ticket_management_is_user_logged_in", true, {
-      expires: 60 * 24*7,
+      expires: 60 * 24,
       sameSite: "lax",
     });
 

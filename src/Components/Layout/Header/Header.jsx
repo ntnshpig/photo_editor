@@ -48,7 +48,7 @@ const Header = (props) => {
             className={`${scss.Button} ${scss.Profile}`}
             onClick={() => navigate("/profile")}
           >
-            {authCtx.userLogin}
+            {authCtx.email}
           </button>
           <button
             className={`${scss.Button} ${scss.Logout}`}

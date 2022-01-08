@@ -1,0 +1,90 @@
+$main-bright-color: #5e81fe;
+$sub-bright-color: #697ca6;
+$sub-bg-color: #232b35;
+$shadow-color: #17202a;
+
+.PaintDiv {
+  height: 560px;
+  width: 1100px;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  .PaintBlock {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    overflow: hidden;
+    background: $sub-bg-color;
+  }
+}
+.Tools {
+  height: 100%;
+  box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-flow: column;
+  padding: 1em;
+  justify-content: center;
+}
+.ToolElem {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: $sub-bright-color;
+}
+.Save {
+padding: 0.5em 1em;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  color: $sub-bg-color;
+  background: $main-bright-color;
+  box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+}
+.Clear {
+    padding: 0.5em 1em;
+  position: absolute;
+  bottom: 10px;
+  right: 90px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  color: $sub-bg-color;
+  background: $main-bright-color;
+  box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+}
+.awesomeContainerBlock {
+    margin-top: -20px;
+    margin-left: 10px;
+    position: relative;
+  width: 850px;
+  height: 470px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: $shadow-color;
+  border-radius: 12px;
+}
+.awesomeContainer {
+ background-color: transparent;
+}

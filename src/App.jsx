@@ -11,6 +11,7 @@ const PhotoEditPage = React.lazy(() => import("./Components/Pages/PhotoEditPage"
 const SignInPage = React.lazy(() => import("./Components/Pages/SignInPage"));
 const SignUpPage = React.lazy(() => import("./Components/Pages/SignUpPage"));
 const ProfilePage = React.lazy(() => import("./Components/Pages/ProfilePage"));
+const PaintPage = React.lazy(() => import("./Components/Pages/PaintPage"));
 
 const App = () => {
   const ctxAuth = useContext(AuthContext);
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/profile" exact element={<ProfilePage />} />
           )}
           <Route path="/edit" exact element={<PhotoEditPage />} />
+          <Route path="/paint" exact element={<PaintPage />} />
           <Route path="/signIn" exact element={<SignInPage />} />
           <Route path="/signUp" exact element={<SignUpPage />} />
           <Route path="*" element={<Navigate to="/" />} />

@@ -1,0 +1,13 @@
+
+.ant-message div{
+    border-radius: 6px;
+    color: #697ca6;
+}
+.ant-message div .ant-message-notice-content, .ant-notification div .ant-notification-notice{
+    background-color: #17202a;
+}
+
+.ant-notification div{
+    color: #697ca6;
+    border-radius: 12px;
+}
