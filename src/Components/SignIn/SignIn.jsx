@@ -117,7 +117,7 @@ const SignIn = (props) => {
             color="#5e81fe"
             height={100}
             width={100}
-            timeout={Infinity}
+            timeout={50000}
             className={scss.Loader}
           />
         )}

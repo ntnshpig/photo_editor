@@ -150,7 +150,7 @@ const PhotoEdit = (props) => {
 
   const exportHandler = () => {
     if(!authCtx.isLoggedIn()) {
-      message.error("You need to Login fisrt!");
+      message.error("You need to Login first!");
       return
     }
     if (imageRef.current.getAttribute("src") !== "") {
@@ -158,7 +158,7 @@ const PhotoEdit = (props) => {
         .toJpeg(image_holderRef.current, { quality: 0.95 })
         .then(function (dataUrl) {
           var link = document.createElement("a");
-          link.download = `${fileName}.jpeg`;
+          link.download = `image.jpeg`;
           link.href = dataUrl;
           link.click();
           document.body.removeChild(link);
